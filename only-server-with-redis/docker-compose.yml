@@ -1,0 +1,12 @@
+version: "3"
+services:
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        ports:
+            - ${MY_PORT}:3306
+    redis:
+        image: redis:latest
+        ports:
+            - ${MY_REDIS_PORT}:6379

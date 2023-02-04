@@ -24,5 +24,9 @@ services:
             WAIT: ${WAIT}
         links:
             - ${MYSQL_SERVICENAME}
+    redis:
+        image: redis:latest
+        ports:
+            - ${MY_REDIS_PORT}:6379
 volumes:
     dumped-mysql-vol:
