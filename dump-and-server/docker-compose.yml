@@ -1,0 +1,22 @@
+version: "3"
+services:
+    mysql:
+        image: mysql:latest
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        ports:
+            - ${MY_PORT}:3306
+
+    mysql-dump:
+        build:
+            context: dockerfile/
+            dockerfile: Dockerfile
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            ORG_HOST: ${ORG_HOST}
+            ORG_USER: ${ORG_USER}
+            ORG_PASSWORD: ${ORG_PASSWORD}
+            ORG_DB: ${ORG_DB}
+            MYSQL_SERVICENAME: ${MYSQL_SERVICENAME}
+        links:
+            - ${MYSQL_SERVICENAME}
