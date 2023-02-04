@@ -24,8 +24,6 @@ only-server: mysql만을 실행(DDL dump가 필요 없을 때)
 
 > 반드시 실행 전 env 파일을 세팅하여야 함
 
----
-
 **_dump-and-server:_**
 
 MYSQL_ROOT_PASSWORD=toor -> 로컬에 실행할 MySQL의 비밀번호
@@ -42,7 +40,7 @@ MYSQL_SERVICENAME=mysql -> docker-compose 서비스명이므로 고정
 
 MY_PORT=3306 -> 로컬에 실행할 MySQL의 외부 포트
 
-## WAIT=30 -> 로컬에 실행할 mysql의 initialize가 시간이 좀 걸리므로 dump-덮어쓰기 작업 전에 기다리는 시간
+WAIT=30 -> 로컬에 실행할 mysql의 initialize가 시간이 좀 걸리므로 dump-덮어쓰기 작업 전에 기다리는 시간
 
 **_only-server:_**
 
