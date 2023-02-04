@@ -3,7 +3,7 @@ echo "service mysql on for use client"
 service mysql start
 
 echo "wait for db init" 
-sleep 20
+sleep $WAIT
 
 echo "dump to it"
 mysqldump -u $ORG_USER -p$ORG_PASSWORD --host $ORG_HOST --databases $ORG_DB --no-data --set-gtid-purged=OFF --column-statistics=0 > /root/all_ddl.sql

@@ -18,5 +18,6 @@ services:
             ORG_PASSWORD: ${ORG_PASSWORD}
             ORG_DB: ${ORG_DB}
             MYSQL_SERVICENAME: ${MYSQL_SERVICENAME}
+            WAIT: ${WAIT}
         links:
             - ${MYSQL_SERVICENAME}
