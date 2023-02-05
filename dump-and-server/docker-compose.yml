@@ -8,6 +8,7 @@ services:
             - ${MY_PORT}:3306
 
     mysql-dump:
+        image: mysql-dump
         build:
             context: dockerfile/
             dockerfile: Dockerfile
