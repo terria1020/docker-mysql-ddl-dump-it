@@ -6,6 +6,8 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         ports:
             - ${MY_PORT}:3306
+        volumes:
+            - dumped-mysql-vol:/var/lib/mysql
 
     mysql-dump:
         image: mysql-dump
@@ -22,3 +24,5 @@ services:
             WAIT: ${WAIT}
         links:
             - ${MYSQL_SERVICENAME}
+volumes:
+    dumped-mysql-vol:

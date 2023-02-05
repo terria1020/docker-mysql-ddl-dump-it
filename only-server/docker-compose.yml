@@ -6,3 +6,9 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         ports:
             - ${MY_PORT}:3306
+        volumes:
+            - dump-and-server_dumped-mysql-vol:/var/lib/mysql
+
+volumes:
+    dump-and-server_dumped-mysql-vol:
+        external: true
