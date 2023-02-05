@@ -6,7 +6,12 @@ services:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
         ports:
             - ${MY_PORT}:3306
+        volumes:
+            - dump-and-server_dumped-mysql-vol:/var/lib/mysql
     redis:
         image: redis:latest
         ports:
             - ${MY_REDIS_PORT}:6379
+volumes:
+    dump-and-server_dumped-mysql-vol:
+        external: true
