@@ -6,7 +6,7 @@ echo "wait for db init"
 sleep $WAIT
 
 echo "dump to it"
-mysqldump -u $ORG_USER -p$ORG_PASSWORD --host $ORG_HOST --databases $ORG_DB --no-data --set-gtid-purged=OFF --column-statistics=0 > /root/all_ddl.sql
+mysqldump -u $ORG_USER -p$ORG_PASSWORD --host $ORG_HOST --port=$ORG_PORT --databases $ORG_DB --no-data --set-gtid-purged=OFF --column-statistics=0 > /root/all_ddl.sql
 sed "s/$ORG_HOST/localhost/g" /root/all_ddl.sql > /root/all_ddl.sql.new
 mv /root/all_ddl.sql.new /root/all_ddl.sql
 

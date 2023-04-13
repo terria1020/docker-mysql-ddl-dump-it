@@ -17,6 +17,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             ORG_HOST: ${ORG_HOST}
+            ORG_PORT: ${ORG_PORT}
             ORG_USER: ${ORG_USER}
             ORG_PASSWORD: ${ORG_PASSWORD}
             ORG_DB: ${ORG_DB}
